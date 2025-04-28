@@ -1,12 +1,12 @@
 # Fawry-Internship-Tasks
 ## Q1 : Custom Command ( mygrep.sh )
 ### Reflective Section
-#### 1. How does your script handle arguments and options ?
-- I used getopts to parse command-line options (-n, -v) .
-- The script sets flags (show_line_numbers and invert_match) based on the options .
-- After parsing options, it shifts positional arguments and checks that both a search string and filename are provided .
-- It validates if the given file exists .
-- Based on the flags, it either shows matching lines normally, shows line numbers, or inverts the match .
+#### 1- how your script handles arguments and options?
+My script manually checks each argument: it sets flags for -n and -v, 
+handles combined options like -vn, then treats the next two arguments 
+as the search string and filename and prints lines based on the selected options.
+
+
 
 
 #### 2. How would the structure change if regex or -i/-c/-l options were added ?
