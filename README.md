@@ -9,25 +9,23 @@ as the search string and filename and prints lines based on the selected options
 
 
 
-#### 2. How would the structure change if regex or -i/-c/-l options were added ?
-- For regex, I would replace the simple grep check with an extended regex match (grep -E) or shell pattern matching ([[ $line =~ $pattern ]]) .
-- For -i (ignore case), the structure would not change because case-insensitive search is already done using grep -i .
-- For -c (count matches), I would add a counter variable that increments on each match and print the count at the end .
-- For -l (list filenames), I would only print the filename once if there is at least one match instead of printing lines .
-- I would modularize the script into small functions to make it easier to maintain when adding more options .
+#### 2-If you were to support regex or -i/-c/-l options, how would your structure change?
+ I would change the script to use getopts for cleaner option parsing. 
+ I would also rely more on grep directly for matching, 
+ counting, or listing files, instead of manually reading and processing each line.
 
-#### 3. What part of the script was hardest to implement and why?
-- The hardest part was correctly parsing options (-v, -n, combinations like -vn) .
-- Ensuring the logic for inverted matches with line numbers was tricky, especially when combining both options .
-- Using getopts and shifting positional parameters cleanly also required careful handling to avoid wrong arguments .
 
+#### 3-What part of the script was hardest to implement and why?
+The hardest part was handling combined options like -vn correctly while 
+still identifying the search string and filename in the right order, 
+especially without using getopts.
 
 #### Bonus Features
 - Added support for `--help` flag to print usage instructions .
 - Improved command-line option parsing using `getopts` for cleaner and more efficient handling of `-n` and `-v` options .
 
 #### Screenshots
-- See folder `screenshots/`.
+- See folder `task 1/`.
 
 ## Q2 - Internal Service Unreachable ( Troubleshooting internal.example.com )
 1. Verified DNS with dig (local and 8.8.8.8)
