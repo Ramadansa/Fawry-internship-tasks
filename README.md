@@ -1,4 +1,4 @@
-# Fawry-Internship-Task
+# Fawry-Internship-Tasks
 ## Q1 : Custom Command ( mygrep.sh )
 ### Reflective Section
 #### 1. How does your script handle arguments and options ?
